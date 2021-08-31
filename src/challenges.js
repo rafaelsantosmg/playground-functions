@@ -12,11 +12,9 @@ function compareTrue(param1, param2) {
 }
 
 // Desafio 2
-/** Escreva uma função com o nome calcArea que receba um valor de base (chamado base) e outro de altura (chamado height) de um triângulo e retorne o cálculo da sua área.
-
-Lembre-se que a área de um triângulo é calculada através da seguinte fórmula: (base * altura) / 2. */
+/** Escreva uma função com o nome calcArea que receba um valor de base (chamado base) e outro de altura (chamado height) de um triângulo e retorne o cálculo da sua área. */
 function calcArea(base, height) {
-  let area = base * height / 2;
+  let area = (base * height) / 2;
   if (Number.isInteger(area)) {
     return area;
   }
@@ -24,8 +22,10 @@ function calcArea(base, height) {
 }
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+/** Escreva uma função com o nome splitSentence, a qual receberá uma string e retornará uma array de strings separadas por cada espaço na string original. */
+function splitSentence(words) {
+  let array = words.split(' ');
+  return array;
 }
 
 // Desafio 4
