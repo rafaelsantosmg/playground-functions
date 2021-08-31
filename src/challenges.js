@@ -32,14 +32,29 @@ function splitSentence(words) {
 /** Escreva uma função com o nome concatName que, ao receber uma array de strings, retorne uma string com o formato 'ÚLTIMO ITEM, PRIMEIRO ITEM', independente do tamanho da array. */
 function concatName(array) {
   let firstWord = array.shift();
-  let secundWord = array.pop();
-  let concatWords = `${secundWord}, ${firstWord}`;
+  let lastWord = array.pop();
+  let concatWords = `${lastWord}, ${firstWord}`;
   return concatWords;
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+/** Escreva uma função com o nome footballPoints que receba o número de vitórias (esse parâmetro deverá se chamar wins) e o número de empates (esse parâmetro deverá se chamar ties) e retorne a quantidade de pontos que o time marcou em um campeonato.
+
+Para tanto, considere que cada vitória vale 3 pontos e cada empate vale 1 ponto.
+
+O que será verificado:
+
+Retorne 50 pontos quando o time tenha 14 vitórias e 8 empates
+
+Retorne 5 pontos quando o time tenha 1 vitória e 2 empates
+
+Retorne 0 pontos quando o time tenha 0 vitórias e 0 empates
+
+ */
+function footballPoints(wins, ties) {
+  let totwins = wins * 3;
+  let totTies = ties * 1;
+  return totwins + totTies;
 }
 
 // Desafio 6
