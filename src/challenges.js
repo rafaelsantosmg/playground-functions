@@ -29,8 +29,12 @@ function splitSentence(words) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+/** Escreva uma função com o nome concatName que, ao receber uma array de strings, retorne uma string com o formato 'ÚLTIMO ITEM, PRIMEIRO ITEM', independente do tamanho da array. */
+function concatName(array) {
+  let firstWord = array.shift();
+  let secundWord = array.pop();
+  let concatWords = `${secundWord}, ${firstWord}`;
+  return concatWords;
 }
 
 // Desafio 5
