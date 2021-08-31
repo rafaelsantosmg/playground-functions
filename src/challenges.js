@@ -38,19 +38,7 @@ function concatName(array) {
 }
 
 // Desafio 5
-/** Escreva uma função com o nome footballPoints que receba o número de vitórias (esse parâmetro deverá se chamar wins) e o número de empates (esse parâmetro deverá se chamar ties) e retorne a quantidade de pontos que o time marcou em um campeonato.
-
-Para tanto, considere que cada vitória vale 3 pontos e cada empate vale 1 ponto.
-
-O que será verificado:
-
-Retorne 50 pontos quando o time tenha 14 vitórias e 8 empates
-
-Retorne 5 pontos quando o time tenha 1 vitória e 2 empates
-
-Retorne 0 pontos quando o time tenha 0 vitórias e 0 empates
-
- */
+/** Escreva uma função com o nome footballPoints que receba o número de vitórias (esse parâmetro deverá se chamar wins) e o número de empates (esse parâmetro deverá se chamar ties) e retorne a quantidade de pontos que o time marcou em um campeonato. */
 function footballPoints(wins, ties) {
   let totwins = wins * 3;
   let totTies = ties * 1;
@@ -58,8 +46,28 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+/** Escreva uma função chamada highestCount que, ao receber uma array de números, retorne a quantidade de vezes que o maior deles se repete. */
+
+// Função que faz a contagem de quantos elementos iguais aparece no "Array".
+function howManyTimes(arrays, biggers) {
+  let totBigger = 0;
+  for (let index = 0; index < arrays.length; index += 1) {
+    if (arrays[index] === biggers) {
+      totBigger += 1;
+    }
+  }
+  return totBigger;
+}
+
+function highestCount(array) {
+  let bigger = array[0];
+  for (let index = 1; index < array.length; index += 1) {
+    if (array[index] > bigger) {
+      bigger = array[index];
+    }
+  }
+  let totBigger = howManyTimes(array, bigger);
+  return totBigger;
 }
 
 // Desafio 7
