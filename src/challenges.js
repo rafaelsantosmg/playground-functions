@@ -1,6 +1,14 @@
 // Desafio 1
-function compareTrue() {
-
+/** Retornar true se ambos os valores forem verdadeiros;
+ *  Retornar false se um ou ambos os parâmetros forem falsos.
+ */
+function compareTrue(param1, param2) {
+  // Forma simplificada do "IF" quando temos somente uma linha dentro do escopo.
+  if (param1 && param2 === true) {
+    return true;
+  }
+  // Quando temos um "return" dentro da expressão "if" é desnecessário a utilização do "else"!
+  return false;
 }
 
 // Desafio 2
