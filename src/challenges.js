@@ -71,8 +71,30 @@ function highestCount(array) {
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+/** Imagine que existem dois gatos, os quais chamaremos de cat1 e cat2, e que ambos estão caçando um mesmo rato chamado mouse. Imagine que os animais estão em uma reta, cada um em uma posição representada por um número. */
+function distanceAccount(position1, position2) {
+  let count = 0;
+  if (position1 > position2) {
+    for (let index = position2; index <= position1; index += 1) {
+      count += 1;
+    }
+    return count;
+  }
+  for (let index = position1; index <= position2; index += 1) {
+    count += 1;
+  }
+  return count;
+}
+
+function catAndMouse(mouse, cat1, cat2) {
+  let distanceCat1 = distanceAccount(mouse, cat1);
+  let distanceCat2 = distanceAccount(mouse, cat2);
+  if (distanceCat1 < distanceCat2) {
+    return 'cat1';
+  } if (distanceCat1 === distanceCat2) {
+    return 'os gatos trombam e o rato foge';
+  }
+  return 'cat2';
 }
 
 // Desafio 8
