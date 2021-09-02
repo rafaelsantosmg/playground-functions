@@ -98,10 +98,54 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+/** Crie uma função chamada fizzBuzz que receba uma array de números e retorne uma array da seguinte forma:
+
+Para cada número do Array que seja divisível apenas por 3, apresente uma string "fizz";
+Para cada número do Array que seja divisível apenas por 5, apresente uma string "buzz";
+Caso o número seja divisível por 3 e 5, retorne a string "fizzBuzz";
+Caso o número não possa ser dividido por 3 nem por 5, retorne a string "bug!";
+Exemplo: caso o parâmetro seja [2, 15, 7, 9, 45], sua função deverá retornar ["bug!", "fizzBuzz", "bug!", "fizz", "fizzBuzz"].
+
+O que será verificado:
+
+Retorne as strings ['bug!', 'fizzBuzz', 'bug!', 'fizz', 'fizzBuzz'] quando é passado os parâmetros [2, 15, 7, 9, 45] para a função fizzBuzz
+
+Retorne as strings ['bug!', 'fizz'] quando é passado os parâmetros [7, 9] para a função fizzBuzz
+
+Retorne as strings ['fizz', 'buzz'] quando é passado os parâmetros [9, 25] para a função fizzBuzz */
+function divisibleBy(number) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return 'fizzBuzz';
+  } if (number % 3 === 0) {
+    return 'fizz';
+  } if (number % 5 === 0) {
+    return 'buzz';
+  }
+  return 'bug';
 }
 
+function switchFizzBuzz(number) {
+  switch (divisibleBy(number)) {
+  case 'fizz':
+    return 'fizz';
+  case 'buzz':
+    return 'buzz';
+  case 'fizzBuzz':
+    return 'fizzBuzz';
+  case 'bug':
+    return 'bug!';
+  default:
+  }
+}
+
+function fizzBuzz(array) {
+  let arrayFizzBuzz = [];
+  for (let index = 0; index < array.length; index += 1) {
+    arrayFizzBuzz.push(switchFizzBuzz(array[index]));
+  }
+  return arrayFizzBuzz;
+}
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
 // Desafio 9
 function encode() {
   // seu código aqui
