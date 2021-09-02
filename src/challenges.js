@@ -103,16 +103,7 @@ function catAndMouse(mouse, cat1, cat2) {
 Para cada número do Array que seja divisível apenas por 3, apresente uma string "fizz";
 Para cada número do Array que seja divisível apenas por 5, apresente uma string "buzz";
 Caso o número seja divisível por 3 e 5, retorne a string "fizzBuzz";
-Caso o número não possa ser dividido por 3 nem por 5, retorne a string "bug!";
-Exemplo: caso o parâmetro seja [2, 15, 7, 9, 45], sua função deverá retornar ["bug!", "fizzBuzz", "bug!", "fizz", "fizzBuzz"].
-
-O que será verificado:
-
-Retorne as strings ['bug!', 'fizzBuzz', 'bug!', 'fizz', 'fizzBuzz'] quando é passado os parâmetros [2, 15, 7, 9, 45] para a função fizzBuzz
-
-Retorne as strings ['bug!', 'fizz'] quando é passado os parâmetros [7, 9] para a função fizzBuzz
-
-Retorne as strings ['fizz', 'buzz'] quando é passado os parâmetros [9, 25] para a função fizzBuzz */
+Caso o número não possa ser dividido por 3 nem por 5, retorne a string "bug!"; */
 function divisibleBy(number) {
   if (number % 3 === 0 && number % 5 === 0) {
     return 'fizzBuzz';
@@ -145,13 +136,50 @@ function fizzBuzz(array) {
   }
   return arrayFizzBuzz;
 }
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
+
 // Desafio 9
-function encode() {
-  // seu código aqui
+/** Crie duas funções: a primeira deverá se chamar encode e, ao receber uma string como parâmetro, deverá trocar todas as vogais minúsculas por números, de acordo com o formato a seguir:
+
+a -> 1
+e -> 2
+i -> 3
+o -> 4
+u -> 5 */
+function convertNumberString(number) {
+  const NUMBER = ['1', '2', '3', '4', '5'];
+  const WOWEL = ['a', 'e', 'i', 'o', 'u'];
+  for (let index = 0; index < NUMBER.length; index += 1) {
+    if (number === NUMBER[number - 1]) {
+      return WOWEL[number - 1];
+    }
+  }
+  return number;
 }
-function decode() {
-  // seu código aqui
+
+function convertStringNumber(string) {
+  const WOWEL = ['a', 'e', 'i', 'o', 'u'];
+  for (let index = 0; index < WOWEL.length; index += 1) {
+    if (string === WOWEL[index]) {
+      return index + 1;
+    }
+  }
+  return string;
+}
+
+function encode(string) {
+  let encodeString = '';
+  for (let index = 0; index < string.length; index += 1) {
+    encodeString += convertStringNumber(string[index]);
+  }
+  return encodeString;
+}
+
+function decode(string) {
+  let encodeString = '';
+  for (let index = 0; index < string.length; index += 1) {
+    encodeString += convertNumberString(string[index]);
+  }
+  return encodeString;
 }
 
 module.exports = {
